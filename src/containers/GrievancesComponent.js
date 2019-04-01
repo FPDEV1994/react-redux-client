@@ -1,14 +1,14 @@
 
 // ./react-redux-client/src/containers/Todos.js
 import { connect } from 'react-redux';
-import * as userInformationActions from '../actions/userInformationActions';
+import * as grievancesActions from '../actions/grievancesActions';
 import GrievancesComponent from '../components/GrievancesComponent';
 
 // map state from store to props
 const mapStateToProps = (state) => {
   return {
     //you can now say this.props.mappedAppSate
-    mappedUserInformationState: state.userInformationState
+    mappedGrievancesState: state.grievancesState
   }
 }
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     //you can now say this.props.mappedAppActions
-    fetchUserInformation: () => dispatch(userInformationActions.fetchUserInformation())
+    fetchGrievances: () => dispatch(grievancesActions.fetchGrievances())
   }
 }
 
