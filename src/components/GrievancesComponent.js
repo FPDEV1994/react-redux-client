@@ -137,12 +137,12 @@ const actionsStyles = theme => ({
     // };
   
     handleChangePage = (event, page) => {
-      this.setState({ page });
-    };
-  
-    handleChangeRowsPerPage = event => {
-      this.setState({ page: 0, rowsPerPage: event.target.value });
-    };
+        this.props.setPage(event, page);
+      };
+    
+      handleChangeRowsPerPage = event => {
+          this.props.changeRowsPerPage(0, +event.target.value);
+      };
   
     render() {
       const { classes } = this.props;
@@ -173,7 +173,7 @@ const actionsStyles = theme => ({
               <TableFooter>
                 <TableRow>
                   <TablePagination
-                    rowsPerPageOptions={[9, 18, 27]}
+                    rowsPerPageOptions={[5, 10, 15]}
                     colSpan={3}
                     count={rows.length}
                     rowsPerPage={rowsPerPage}

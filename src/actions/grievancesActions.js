@@ -32,3 +32,17 @@ export const fetchGrievancesRejected = (error) => {
         payload: error
     }
 }
+
+export const setPage = (event, page) => {
+    return {
+        type: 'CHANGE_PAGE_NUMBER',
+        payload: page
+    }
+}
+
+export const changeRowsPerPage = ( page, rowsPerPage ) => {
+    return  {
+        type: 'CHANGE_ROWS_PER_PAGE',
+        payload: {page: page, rowsPerPage: rowsPerPage}
+    }
+}

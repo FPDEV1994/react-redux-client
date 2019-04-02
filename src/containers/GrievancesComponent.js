@@ -16,7 +16,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     //you can now say this.props.mappedAppActions
-    fetchGrievances: () => dispatch(grievancesActions.fetchGrievances())
+    fetchGrievances: () => dispatch(grievancesActions.fetchGrievances()),
+    setPage: (event, page) => dispatch(grievancesActions.setPage(event, page)),
+    changeRowsPerPage: (page, rowsPerPage) => dispatch(grievancesActions.changeRowsPerPage(page, rowsPerPage))
   }
 }
 
