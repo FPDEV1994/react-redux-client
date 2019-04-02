@@ -15,6 +15,8 @@ import {ConnectedRouter} from 'react-router-redux';
 // eslint-disable-next-line
 import Appp from './containers/App';
 import UserInformation from './containers/UserInformation';
+import GrievancesComponent from './containers/GrievancesComponent';
+// import CoverageRedetermination from './containers/CoverageRedetermination';
 
 const store = configureStore();
 // eslint-disable-next-line
@@ -29,25 +31,34 @@ class App extends Component {
       <div style={{ display: "flex" }}>
         <div
           style={{
+            
             padding: "10px",
             width: "100%",
             background: "#f0f0f0"
           }}
         >
-          <ul style={{ listStyleType: "none", padding: 0 }}>
+          <ul style={{ listStyleType: "none", padding: "10px", display: "flex",
+            justifyContent: "flex-end"}}>
             {/* <li>
               <Link to="/">Home</Link>
             </li> */}
-            <li>
+            <li style={{ padding: "10px"}}>
               <Link to="/userInfo">UserInfo</Link>
             </li>
-  
+            <li style={{ padding: "10px"}}>
+              <Link to="/grievances">Grievances</Link>
+            </li>
+            {/* <li style={{ padding: "10px"}}>
+              <Link to="/grievances">Coverage Redetermination</Link>
+            </li> */}
           </ul>
 
             {/* <Route path="/" exact={true} component={Appp} /> */}
             
             <div className="content">
             <Route path="/userInfo" exact={true} component={UserInformation} />
+            <Route path="/grievances" exact={true} component={GrievancesComponent} />
+            {/* <Route path="/coverageRedetermination" exact={true} component={CoverageRedetermination} /> */}
             </div>
         </div>
         
