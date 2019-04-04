@@ -13,6 +13,7 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import TableHead from '@material-ui/core/TableHead';
 
 const actionsStyles = theme => ({
     root: {
@@ -92,12 +93,12 @@ const actionsStyles = theme => ({
   const TablePaginationActionsWrapped = withStyles(actionsStyles, { withTheme: true })(
     TablePaginationActions,
   );
-  
-  let counter = 0;
-  function createData(name, calories, fat) {
-    counter += 1;
-    return { id: counter, name, calories, fat };
-  }
+  //
+  //let counter = 0;
+  //function createData(name, calories, fat) {
+   // counter += 1;
+   // return { id: counter, name, calories, fat };
+ // }
   
   const styles = theme => ({
     root: {
@@ -125,7 +126,7 @@ const actionsStyles = theme => ({
     //     createData('Gingerbread', 356, 16.0),
     //     createData('Honeycomb', 408, 3.2),
     //     createData('Ice cream sandwich', 237, 9.0),
-    //     createData('Jelly Bean', 375, 0.0),
+    //     createData('Jelly Bean', 3 75, 0.0),
     //     createData('KitKat', 518, 26.0),
     //     createData('Lollipop', 392, 0.2),
     //     createData('Marshmallow', 318, 0),
@@ -154,14 +155,35 @@ const actionsStyles = theme => ({
         <Paper className={classes.root}>
           <div className={classes.tableWrapper}>
             <Table className={classes.table}>
+
+
+            <TableHead>
+                <TableRow>
+                  <TableCell align="right">MEMBER FIRST NAME</TableCell>
+                  <TableCell align="right">MEMBER LAST NAME</TableCell>
+                  <TableCell align="right">MEMBER ID</TableCell>
+                  <TableCell align="right">CASE NUMBERS</TableCell>
+                  <TableCell align="right">CONTACT METHOD</TableCell>
+                  <TableCell align="right">ORIGINAL REQUEST DATE/TIME</TableCell>
+                  <TableCell align="right">REQUEST TYPE NAME</TableCell>  
+                  <TableCell align="right">RESOLUTION NOTIFICATION TYPE</TableCell>  
+                  <TableCell align="right">AGING DAYS</TableCell> 
+              </TableRow>
+             </TableHead>
               <TableBody>
-                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => (
-                  <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
-                      {row.id}
-                    </TableCell>
-                    <TableCell align="right">{row.firstName}</TableCell>
-                    <TableCell align="right">{row.lastName}</TableCell>
+              
+    {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => (
+                  <TableRow key={row.memeberId}>
+                    <TableCell align="right" >{row.memeberName}</TableCell>
+                    <TableCell align="right" >{row.memberLastName}</TableCell>
+                    <TableCell align="right" >{row.memeberId}</TableCell>
+                    <TableCell align="right" >{row.caseNumbers}</TableCell>
+                    <TableCell align="right" >{row.ContactMethod}</TableCell>
+                    <TableCell align="right" >{row.OriginalRequestDate}</TableCell>
+                    <TableCell align="right" >{row.requestTypeName}</TableCell>
+                    <TableCell align="right" >{row.ResolutionNotificationType}</TableCell>
+                    <TableCell align="right" >{row.AgingDays}</TableCell>
+
                   </TableRow>
                 ))}
                 {emptyRows > 0 && (
@@ -173,7 +195,7 @@ const actionsStyles = theme => ({
               <TableFooter>
                 <TableRow>
                   <TablePagination
-                    rowsPerPageOptions={[5, 10, 15]}
+                    rowsPerPageOptions={[8, 16, 24,32]}
                     colSpan={3}
                     count={rows.length}
                     rowsPerPage={rowsPerPage}

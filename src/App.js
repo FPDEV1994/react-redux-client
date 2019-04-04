@@ -11,10 +11,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import * as browserHistory from 'react-router';
 import configureStore from './store/configureStore';
 // eslint-disable-next-line
-import {ConnectedRouter} from 'react-router-redux';
+import { ConnectedRouter } from 'react-router-redux';
 // eslint-disable-next-line
-import Appp from './containers/App';
-import UserInformation from './containers/UserInformation';
 import GrievancesComponent from './containers/GrievancesComponent';
 // import CoverageRedetermination from './containers/CoverageRedetermination';
 
@@ -27,45 +25,48 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-        <Router>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            
-            padding: "10px",
-            width: "100%",
-            background: "#f0f0f0"
-          }}
-        >
-          <ul style={{ listStyleType: "none", padding: "10px", display: "flex",
-            justifyContent: "flex-end"}}>
-            {/* <li>
+          <Router>
+            <div style={{ display: "flex" }}>
+              <div
+                style={{
+
+                  padding: "10px",
+                  width: "100%",
+                  background: "#f0f0f0"
+                }}
+              >
+
+                <ul style={{ listStyleType: "none", padding: 0, display: "flex", justifyContent: 'flex-end' }}>
+                  {/* <li>
               <Link to="/">Home</Link>
             </li> */}
-            <li style={{ padding: "10px"}}>
-              <Link to="/userInfo">UserInfo</Link>
-            </li>
-            <li style={{ padding: "10px"}}>
-              <Link to="/grievances">Grievances</Link>
-            </li>
-            {/* <li style={{ padding: "10px"}}>
+                  <li style={{ padding: "10px", backgroundColor: "#ccc", margin: "5px" }}>
+                    <Link to="/userInfo">UserInfo</Link>
+                  </li>
+                  <li style={{ padding: "10px", backgroundColor: "#ccc", margin: "5px" }}>
+                    <Link to="/grievances">Grievances</Link>
+                  </li>
+                  {/* <li style={{ padding: "10px"}}>
               <Link to="/grievances">Coverage Redetermination</Link>
             </li> */}
-          </ul>
+                  <li style={{ padding: "10px", backgroundColor: "#ccc", margin: "5px" }}>
+                    <Link to="/tableExample">Material UI Table Example</Link>
+                  </li>
 
-            {/* <Route path="/" exact={true} component={Appp} /> */}
-            
-            <div className="content">
-            <Route path="/userInfo" exact={true} component={UserInformation} />
-            <Route path="/grievances" exact={true} component={GrievancesComponent} />
-            {/* <Route path="/coverageRedetermination" exact={true} component={CoverageRedetermination} /> */}
+                </ul>
+
+                {/*  <Route path="/" exact={true} component={Appp} /> */}
+
+                <div className="content">
+                  <Route path="/grievances" exact={true} component={GrievancesComponent} />
+                  {/* <Route path="/coverageRedetermination" exact={true} component={CoverageRedetermination} /> */}
+                </div>
+              </div>
+
             </div>
+          </Router>
         </div>
-        
-      </div>
-    </Router>
-        </div>
-        
+
       </Provider>
     );
   }
